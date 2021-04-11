@@ -27,28 +27,21 @@ programDelete()
 
 securityCheck()
 {
-    if [[ $currentPath = $cachesPath ]]
-    then
-	echo "\x1B[32m>\x1B[0m\x1B[32mSecurity: OK\x1B[0m"
-	echo "\x1B[32m>\x1B[0m\x1B[1mDo you want to see whitch file are present in the directory \"Caches and Preferences\" ? (yes/no)\x1B[0m"
-	while read line
-	do
-	    if [[ $line = $yesAnswer ]]
-	    then
-		ls -l $(cachesPath)
-		ls -l $(preferencesPath)
-		programDelete
-		break
-	    else
-		programDelete
-		break
-	    fi
-	done
-	echo "\x1B[32m>\x1B[0mEnd Of Program, thanks to use it :)"
-	exit 0
-    else
-	echo "\x1B[32m>\x1B[0m\x1B[31mSecurity activated: Bad path ==> exit program without any deleted file or directory\x1B[0m"
-	exit 84
-    fi
+    echo "\x1B[32m>\x1B[0m\x1B[1mDo you want to see whitch file are present in the directory \"Caches and Preferences\" ? (yes/no)\x1B[0m"
+    while read line
+    do
+        if [[ $line = $yesAnswer ]]
+        then
+	    ls -l $(cachesPath)
+	    ls -l $(preferencesPath)
+	    programDelete
+	    break
+	else
+	    programDelete
+	    break
+	fi
+    done
+    echo "\x1B[32m>\x1B[0mEnd Of Program, thanks to use it :)"
+    exit 0
 }
 securityCheck
