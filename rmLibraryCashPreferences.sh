@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "\n\x1B[34m -- Niewtone's mac cleaner script launched -- \x1B[0m\n"
+echo "\n\x1B[34m -- SoraisV2's mac cleaner script launched -- \x1B[0m\n"
 cd $HOME/Library/Caches
 yesAnswer="yes"
 noAnswer="no"
@@ -14,8 +14,10 @@ programDelete()
     do
 	if [[ $line2 = $yesAnswer ]]
 	then
+	    open $cachesPath
 	    sudo rm -R $cachesPath
-	    sudo rm -R $preferencesPath
+	    close $cachesPath
+	    #sudo rm -R $preferencesPath
 	    echo "\x1B[32m>\x1B[0m\x1B[32mAll file and directory in \"$(pwd)\" have been successfully removed\x1B[0m"
 	    break
 	else
