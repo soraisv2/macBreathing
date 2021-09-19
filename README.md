@@ -3,5 +3,6 @@ Macleaner - Shell script
 Launch the script:
 
     ./macleaner
+then
 
-Then yes -> yes
+    yes / yes
