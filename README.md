@@ -1,2 +1,4 @@
 Macleaner - Shell script
 ===
+
+* ./macleaner
